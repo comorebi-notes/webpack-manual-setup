@@ -1,8 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import './assets/stylesheets/index.sass'
 
 const Top = () => (
-  <div style={{ backgroundColor: 'black', color: 'yellow' }}>
+  <div>
     <h1>test</h1>
   </div>
 )
