@@ -15,17 +15,13 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        use: [
-          {
-            loader: 'babel-loader',
-            options: {
-              presets: [
-                '@babel/preset-env',
-                '@babel/react'
-              ]
-            }
-          }
-        ]
+        loader: 'babel-loader',
+        options: {
+          presets: [
+            '@babel/preset-env',
+            '@babel/react'
+          ]
+        }
       }, {
         test: /\.s[ac]ss$/,
         use: [
@@ -33,6 +29,13 @@ module.exports = {
           'css-loader',
           'sass-loader'
         ]
+      }, {
+        test: /\.(jpe?g|png|gif|svg|ico)$/,
+        loader: 'url-loader',
+        options: {
+          limit: 2048, // これ以下のファイルはBase64エンコードされてjsに組み込まれる
+          name: './dist/images/[name]-[hash].[ext]' // hashが変更されるとファイル名も変更
+        }
       }
     ]
   }
