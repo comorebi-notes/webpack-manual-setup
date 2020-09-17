@@ -2,14 +2,10 @@ const path = require('path')
 const outputPath = path.resolve(__dirname, 'public')
 
 module.exports = {
-  mode: 'development',
   entry: './src/index.js',
   output: {
     filename: 'dist/main.js',
     path: outputPath
-  },
-  devServer: {
-    contentBase: outputPath
   },
   module: {
     rules: [

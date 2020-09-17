@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "build": "yarn clean && webpack",
-    "start": "webpack-dev-server",
+    "build": "yarn clean && webpack --config webpack.prod.js",
+    "start": "webpack-dev-server --config webpack.dev.js",
     "clean": "rimraf public/dist"
   },
   "devDependencies": {
@@ -20,7 +20,8 @@
     "url-loader": "^4.1.0",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.1.4"
   },
   "dependencies": {
     "react": "^16.13.1",
